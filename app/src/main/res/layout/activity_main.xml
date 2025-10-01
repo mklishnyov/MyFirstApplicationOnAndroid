@@ -8,23 +8,95 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textField"
+        android:id="@+id/resultView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="150dp"
+        android:textSize="28sp"
+        android:text="Result"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnTextChange"
+        android:id="@+id/btnSum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="+"
+        app:layout_constraintStart_toStartOf="@+id/secondNumber"
+        app:layout_constraintTop_toBottomOf="@+id/secondNumber" />
+
+    <Button
+        android:id="@+id/btnDiff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-"
+        app:layout_constraintStart_toStartOf="@+id/btnSum"
+        app:layout_constraintTop_toBottomOf="@+id/btnSum" />
+
+    <Button
+        android:id="@+id/btnMulti"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="*"
+        app:layout_constraintStart_toStartOf="@+id/btnDiff"
+        app:layout_constraintTop_toBottomOf="@+id/btnDiff" />
+
+    <Button
+        android:id="@+id/btnDevide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="/"
+        app:layout_constraintEnd_toEndOf="@+id/secondNumber"
+        app:layout_constraintTop_toBottomOf="@+id/secondNumber" />
+
+    <Button
+        android:id="@+id/btnIntDiv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="//"
+        app:layout_constraintEnd_toEndOf="@+id/btnDevide"
+        app:layout_constraintTop_toBottomOf="@+id/btnDevide" />
+
+    <Button
+        android:id="@+id/btnDivWithRem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="%"
+        app:layout_constraintEnd_toEndOf="@+id/btnIntDiv"
+        app:layout_constraintTop_toBottomOf="@+id/btnIntDiv" />
+
+    <EditText
+        android:id="@+id/firstNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="@+id/textField"
-        app:layout_constraintStart_toStartOf="@+id/textField"
-        app:layout_constraintTop_toBottomOf="@+id/textField" />
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/resultView"
+        app:layout_constraintStart_toStartOf="@+id/resultView"
+        app:layout_constraintTop_toBottomOf="@+id/resultView" />
 
+    <EditText
+        android:id="@+id/secondNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/firstNumber"
+        app:layout_constraintTop_toBottomOf="@+id/firstNumber" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Calculator"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

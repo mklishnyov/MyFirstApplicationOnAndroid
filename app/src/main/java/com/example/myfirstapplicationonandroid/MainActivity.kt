@@ -22,9 +22,58 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        binding.btnTextChange.setOnClickListener {
-            binding.textField.text = "Button Clicked"
+        fun getNumbers(): Pair<Int, Int> {
+            val first = binding.firstNumber.text.toString().toIntOrNull() ?: 0
+            val second = binding.secondNumber.text.toString().toIntOrNull() ?: 0
+            return Pair(first, second)
         }
+
+        binding.btnSum.setOnClickListener {
+            val (firstNumber, secondNumber) = getNumbers()
+            binding.resultView.text = (firstNumber + secondNumber).toString()
+        }
+
+        binding.btnDiff.setOnClickListener {
+            val (firstNumber, secondNumber) = getNumbers()
+            binding.resultView.text = (firstNumber - secondNumber).toString()
+        }
+
+        binding.btnMulti.setOnClickListener {
+            val (firstNumber, secondNumber) = getNumbers()
+            binding.resultView.text = (firstNumber * secondNumber).toString()
+        }
+
+        binding.btnDevide.setOnClickListener {
+            val (firstNumber, secondNumber) = getNumbers()
+            if (secondNumber == 0) {
+                binding.resultView.text = "Error"
+                return@setOnClickListener
+            } else {
+                binding.resultView.text = (firstNumber.toDouble() / secondNumber).toString()
+            }
+        }
+
+        binding.btnIntDiv.setOnClickListener {
+            val (firstNumber, secondNumber) = getNumbers()
+            if (secondNumber == 0) {
+                binding.resultView.text = "Error"
+                return@setOnClickListener
+            } else {
+                binding.resultView.text = (firstNumber / secondNumber).toString()
+            }
+        }
+
+        binding.btnDivWithRem.setOnClickListener {
+            val (firstNumber, secondNumber) = getNumbers()
+            if (secondNumber == 0) {
+                binding.resultView.text = "Error"
+                return@setOnClickListener
+            } else {
+                binding.resultView.text = (firstNumber % secondNumber).toString()
+            }
+        }
+
+
 
     }
 }
