@@ -21,7 +21,6 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
         fun getNumbers(): Pair<Int, Int> {
             val first = binding.firstNumber.text.toString().toIntOrNull() ?: 0
             val second = binding.secondNumber.text.toString().toIntOrNull() ?: 0
