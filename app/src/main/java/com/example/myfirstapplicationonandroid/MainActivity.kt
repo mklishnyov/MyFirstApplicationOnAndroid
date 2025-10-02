@@ -1,6 +1,7 @@
 package com.example.myfirstapplicationonandroid
 
 import android.os.Bundle
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -22,58 +23,22 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        fun getNumbers(): Pair<Int, Int> {
-            val first = binding.firstNumber.text.toString().toIntOrNull() ?: 0
-            val second = binding.secondNumber.text.toString().toIntOrNull() ?: 0
-            return Pair(first, second)
-        }
+        var count = 0
 
-        binding.btnSum.setOnClickListener {
-            val (firstNumber, secondNumber) = getNumbers()
-            binding.resultView.text = (firstNumber + secondNumber).toString()
-        }
-
-        binding.btnDiff.setOnClickListener {
-            val (firstNumber, secondNumber) = getNumbers()
-            binding.resultView.text = (firstNumber - secondNumber).toString()
-        }
-
-        binding.btnMulti.setOnClickListener {
-            val (firstNumber, secondNumber) = getNumbers()
-            binding.resultView.text = (firstNumber * secondNumber).toString()
-        }
-
-        binding.btnDevide.setOnClickListener {
-            val (firstNumber, secondNumber) = getNumbers()
-            if (secondNumber == 0) {
-                binding.resultView.text = "Error"
-                return@setOnClickListener
-            } else {
-                binding.resultView.text = (firstNumber.toDouble() / secondNumber).toString()
+        binding.BecomeRichBtn.setOnClickListener {
+            when (count) {
+                0 -> {
+                    binding.RichImage.setImageResource(R.drawable.ic_im_rich_image)
+                    binding.BecomeRichBtn.text = "Become even richer"
+                    count++
+                }
+                1 -> {
+                    binding.RichImage.setImageResource(R.drawable.ic_im_rich_image_oc)
+                    binding.BecomeRichBtn.visibility = View.GONE
+                    count++
+                }
             }
         }
-
-        binding.btnIntDiv.setOnClickListener {
-            val (firstNumber, secondNumber) = getNumbers()
-            if (secondNumber == 0) {
-                binding.resultView.text = "Error"
-                return@setOnClickListener
-            } else {
-                binding.resultView.text = (firstNumber / secondNumber).toString()
-            }
-        }
-
-        binding.btnDivWithRem.setOnClickListener {
-            val (firstNumber, secondNumber) = getNumbers()
-            if (secondNumber == 0) {
-                binding.resultView.text = "Error"
-                return@setOnClickListener
-            } else {
-                binding.resultView.text = (firstNumber % secondNumber).toString()
-            }
-        }
-
-
 
     }
 }
