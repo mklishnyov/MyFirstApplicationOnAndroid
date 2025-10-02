@@ -24,7 +24,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         var count = 0
-
         binding.BecomeRichBtn.setOnClickListener {
             when (count) {
                 0 -> {
